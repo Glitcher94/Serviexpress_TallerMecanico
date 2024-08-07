@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'core/css/hotweel.css' %}">
+
+    <style>
+        label.error {
+            color: red;
+            font-style: italics;
+            line-height: 50px;
+        }
+
+        input.error {
+            border-color: red;
+        }
+
+        /*Lo que sigue, fue para cambiar el estilo del "somreado azul que aparecía,
+        para que aparezca como rojo cuando te pide que lo valides.*/
+        input.error:focus {
+            border-color: red;
+            box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'core/css/estilo.css' %}">
+
+</head>
+
+<body>
+    <a href="hotweels.html"></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- "JQUERY"-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+    <div class="contenedor" style="width: 100%;">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'core/img/inicio2.png' %}" alt="" width="200" height="100" class="d-inline-block align-text-top">
+                    <h4 class="titulo"> TALLER MECÁNICO</H4>
+                    <h1 class="titulo"> SERVIEXPRESS </h1>
+
+                </a>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'core/img/Home.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Volver Inicio
+                </a>
+            </div>
+        </nav>
+
+        <div style="background-color: whitesmoke; color: darkolivegreen; padding-left: 30%; padding-right: 30%; padding-top: 5%; padding-bottom: 5%;">
+            <h2 class="text-center">Ingreso de personal</h2>
+            <br>
+            <img class="img-fluid mx-auto d-block rounded" src="{% static 'core/img/mecanico1.jpg' %}"/>
+            <br>
+            <form action="" method="POST">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+
+                    {{ form.as_table}}
+
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Entrar</button>
+                <br>
+                <div id="error" class="alert alert-warning"  role="alert">
+                   {{mensaje}}
+                </div>
+                
+                
+            </form>
+            <br>
+            <form>
+                <a href="#">Has olvidado la contraseña?</a>
+                <br>
+                <br>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <div class="contenedor">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'core/img/inicio1.png' %}" alt="" width="200" height="100" class="d-inline-block align-text-top">
+                <h1>
+                  <p class="titulo">RAYO MAKWEEN</p>
+                </h1>
+                
+              </a>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'core/img/home.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                Volver Inicio
+              </a>
+            </div>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'core/img/francisco1.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Trabajo en dirección</h5>
+                <p class="card-text">Trabajo realizado en el mes de febrero, sobre la dirección de un subaru.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'core/img/francisco2.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Trabajo en suspensión delantera</h5>
+                <p class="card-text">Reparación en suspensión delantera de un nissan, mes de marzo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'core/img/francisco3.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Suspensión gastada</h5>
+                <p class="card-text">Reparación de suspensión gastada.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'core/img/francisco4.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Dirección y suspensión</h5>
+                <p class="card-text">Chequeo y mantención de dirección y suspensión de una ssangyong.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    
+</body>
+</html>

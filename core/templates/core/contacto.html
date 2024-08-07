@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'core/css/hotweel.css' %}">
+
+    <style>
+        label.error {
+            color: red;
+            font-style: italics;
+            line-height: 50px;
+        }
+
+        input.error {
+            border-color: red;
+        }
+
+        /*Lo que sigue, fue para cambiar el estilo del "somreado azul que aparecía,
+        para que aparezca como rojo cuando te pide que lo valides.*/
+        input.error:focus {
+            border-color: red;
+            box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%);
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'core/css/estilo.css' %}">
+
+</head>
+
+<body style="color: darkolivegreen;">
+    <a href="hotweels.html"></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- "JQUERY"-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+    <div class="contenedor">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'core/img/inicio2.png' %}" alt="" width="200" height="100" class="d-inline-block align-text-top">
+                    <h4 class="titulo"> TALLER MECÁNICO</H4>
+                    <h1 class="titulo"> SERVIEXPRESS </h1>
+
+                </a>
+            </div>
+        </nav>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'core/img/Home.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Volver Inicio
+                </a>
+            </div>
+        </nav>
+
+        <div style="background-color:whitesmoke; padding: 3%;">
+            <div class="title">
+                <h1>
+                    Puede contactarnos a nuestro whatsapp, o enviándonos un mensaje personalizado.
+                </h1>
+    
+    
+            </div>
+    
+    
+            <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=56952753778" role="button" style="background-color: darkslategray;">
+                <img src="{% static 'core/img/whatsapp.png' %}" alt="">
+            </a>
+    
+    
+    
+            <form action="#" id="formulario">
+    
+                <div class="form-row mt-5">
+                    <div class="col-md-4 mb-3">
+                        <label for="nombre">Nombre:<span class="red">*</span></label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="apellido">Apellidos:<span class="red">*</span></label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="correo">Email:<span class="red">*</span></label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="number" class="form-control" id="telefono" name="telefono" max="999999999">
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:<span class="red">*</span></label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="3" min="25" required></textarea>
+                </div>
+    
+                <br>
+    
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" style="background-color: darkslategray;">
+                        <!--el "primary" al lado del btn es lo que le da el color.
+              Los colores que representa la palabra sale en bootstrap: colors-->
+                        ENVIAR
+                    </button>
+                </div>
+    
+    
+            </form>
+    
+            <script>
+                $(document).ready(function () {
+                    $("#formulario").validate({ //esto es referencia a mi formulario
+                        rules: {
+                            nombre: {
+                                required: true,
+                                minlength: 5
+                            },
+                            apellido: {
+                                required: true,
+                                minlength: 5
+                            },
+                            correo: {
+                                required: true,
+                                email: true
+                            },
+                            telefono: {
+                                required: true,
+                                minlength: 9
+                            },
+                            mensaje: {
+                                required: true,
+                                minlength: 25
+                            }
+                        },
+                        messages: {
+                            nombre: {
+                                required: "Por favor ingrese su nombre completo",
+                                minlength: "Ingrese al menos 5 caracteres"
+                            },
+                            apellido: {
+                                required: "Por favor ingrese sus apellidos",
+                                minlength: "Ingrese al menos 5 caracteres"
+                            },
+                            correo: {
+                                required: "Por favor, ingrese su correo electrónico.",
+                                email: "Por favor, introduzca una dirección de correo válida."
+                            },
+                            telefono: {
+                                required: "Por favor, ingrese un número telefónico",
+                                minlength: "Por favor, introduzca mínimo 9 números"
+                            },
+                            mensaje: {
+                                required: "Por favor, ingrese un mensaje",
+                                minlength: "Ingrese al menos 25 caracteres"
+                            }
+                        }
+    
+    
+                    });
+                });
+            </script>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

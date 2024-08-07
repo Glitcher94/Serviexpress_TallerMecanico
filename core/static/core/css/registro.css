@@ -1,0 +1,36 @@
+body {
+    outline-style: solid;
+    outline-width: 30px;
+    outline-color: darkblue;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor {
+    width: 90%;
+    color: darkblue;
+}
+
+.h2 {
+    display: inline;
+    padding-left: 32%;
+    padding-top: 50px; 
+}
+
+.Registro {
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.titulo {
+    display: inline;
+    justify-content: left;
+    color: darkblue;
+}
+
+.state {
+    display: inline;
+    font-size: 40%;
+    color: darkblue;   
+    padding-left: 160%;
+}   

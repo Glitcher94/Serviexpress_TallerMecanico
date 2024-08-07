@@ -1,0 +1,186 @@
+
+
+body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+
+}
+
+.header{
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.welcome{
+    padding-top: 2%;
+}
+.state{
+    padding-top: 5.5%;
+    padding-left: 53%;
+}
+
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 447px; 
+    
+}
+.navbar{
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+    background-color:black;
+}
+
+.catchphrase{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+
+}
+
+.mapbox {
+    border-style: solid;
+    border-color: darkslategray;
+    border-width: 5px;
+}
+
+.medbox{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+}
+
+.container-body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    border-color: darkslategray;
+    border-style: solid;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-width: 5px;
+}
+
+.colum1 h1{
+    font-size: 22px;
+}
+
+.colum1 p{
+    font-size: 14px;
+}
+
+
+
+.colum2 h1{
+    font-size: 22px;
+   
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.row img{
+    width: 56px;
+    height: 56px;
+    
+}
+
+.row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: darkslategray;
+    
+}
+
+.colum3 h1{
+    font-size: 22px;
+}
+
+
+
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+
+.contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%; 
+    padding: 2%;
+    color: white;
+    background-color: darkslategray;
+}
+
+
+.container-footer{
+    width: 100%;  
+    background-color:darkslategray;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.copyright{
+    color: white;
+}
+.copyright a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.information a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.footr{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+}
+
+/* PAGINA DE ADMINISTRADOR */
+
+.menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2%;
+    color: white;
+    text-align: center;
+}
+

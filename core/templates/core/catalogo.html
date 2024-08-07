@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller SERVIEXPRESS - Principal</title>
+
+    <!--    BOOTSTRAP    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <style>
+        .clase {
+            background: url("{% static 'core/img/fondo.jpg'%}");
+        }
+
+        td>img {
+
+
+
+            height: 50px;
+
+            border: violet 2px solid;
+
+            transition: all 0.2s ease;
+
+        }
+
+        td>img:hover {
+
+            border: rgb(7, 1, 1) 2px solid;
+
+            transform: scale(3.5) rotate(0deg);
+
+            transition: all 0.5s ease;
+        }
+
+        th {
+            border: 2px solid;
+        }
+    </style>
+
+    <!--    API DE MAPBOX    -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+    <!--    AQUÍ LOS .CSS    -->
+    <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+</head>
+
+<body>
+    <!--    BOOTSTRAP Y API    -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js">
+    </script>
+
+
+
+    <!--  CONTENIDO DE LA PÁGINA   -->
+    <div class="header">
+        <img src="{% static 'core/img/inicio2.png' %}" alt="" width="200" height="100">
+        <div class="welcome">
+            <h6>
+                TALLER MECÁNICO
+            </h6>
+            <h3>
+                SERVIEXPRESS
+            </h3>
+        </div>
+        <div class="state">
+            <h6>
+                Bienvenido, cliente.
+            </h6>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <!--    MENÚ    -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent"
+                    style="font-size:larger; color: white;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="reserva_hra">Reserva de horas</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Últimos trabajos destacados
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="gonzalo">Gonzalo Tobar (4)</a></li>
+                                <li><a class="dropdown-item" href="francisco">Francisco Sáez (4)</a></li>
+                                <li><a class="dropdown-item" href="guido">Guido Toro (3)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logeado"> Volver </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+
+
+        <div
+            style="background-color: darkslategray; color: white; display: flex; flex-direction: column; text-align: center; padding-top: 4%; padding-left: 2%; padding-right: 2%; height: 100vh;">
+
+            <div class="table table-responsive-xl ">
+                <table class="table" style="background-color: white;">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Nombre</th>
+
+                            <th>Precio</th>
+
+                            <th>Tipo</th>
+
+                            <th>Foto</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for i in articulo %}
+
+                        <tr>
+
+                            <td>{{i.nombre}}</td>
+
+                            <td>{{i.precio}}</td>
+
+                            <td>{{i.categoria}}</td>
+
+                            <td><img src="{{i.foto}}"></td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</body>

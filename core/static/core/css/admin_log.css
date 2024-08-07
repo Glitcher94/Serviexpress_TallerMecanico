@@ -1,0 +1,32 @@
+body {
+    display:flex;
+    justify-content: center;
+}
+.contenedor{
+    width: 90%;
+    color: darkblue;
+}
+
+.titulo {
+    display: inline;
+    justify-content: left;
+    color: darkblue;
+}
+
+.state {
+    display: inline;
+    font-size: 40%;
+    color: darkblue;   
+    padding-left: 115%;
+}
+
+.menu {
+    padding-top: 5%;
+    padding-bottom: 10%;        
+}
+
+.col-8 {
+    color: black;
+    display: flex;
+    justify-content: center;
+}
